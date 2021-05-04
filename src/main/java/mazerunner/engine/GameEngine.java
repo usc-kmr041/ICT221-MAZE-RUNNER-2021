@@ -31,7 +31,9 @@ public class GameEngine {
      * Plays a text-based game
      */
     public static void main(String[] args) {
+        Map Map = new Map();
         GameEngine engine = new GameEngine(10);
-        System.out.printf("The size of map is %d * %d\n", engine.getSize(), engine.getSize());
+        Map.GenerateMap();
+        Map.move();
     }
 }
