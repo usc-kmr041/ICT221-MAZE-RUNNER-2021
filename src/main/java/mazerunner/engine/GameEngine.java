@@ -31,9 +31,16 @@ public class GameEngine {
      * Plays a text-based game
      */
     public static void main(String[] args) {
-        Map Map = new Map();
-        GameEngine engine = new GameEngine(10);
-        Map.GenerateMap();
-        Map.move();
+        boolean win = true;
+            Map Map = new Map();
+            Map.GenerateMap();
+
+            do{
+                Map.move();
+
+            } while (win);
+
+        System.out.println("win");
+
     }
 }
