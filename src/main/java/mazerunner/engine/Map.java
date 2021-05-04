@@ -1,7 +1,5 @@
 package mazerunner.engine;
-import java.util.Scanner;
-import java.util.StringJoiner;
-import java.util.Random;
+import java.util.*;
 
 public class Map {
     Random rand = new Random();
@@ -10,6 +8,7 @@ public class Map {
     int[][] map = new int[10][10];
     int x = 9;
     int y = 0;
+
 
 
     public void move() {
@@ -21,23 +20,27 @@ public class Map {
             case 'u':
                 x=x-1;
                 map[x+1][y] = 0;
-                GenerateMap();
+                map[x][y] =1;
+                PrintMap();
                 break;
 
             case 'd':
                 x=x+1;
                 map[x-1][y] = 0;
-                GenerateMap();
+                map[x][y] =1;
+                PrintMap();
                 break;
             case 'l':
                 y=y-1;
                 map[x][y+1] = 0;
-                GenerateMap();
+                map[x][y] =1;
+                PrintMap();
                 break;
             case 'r':
                 y=y+1;
                 map[x][y-1] = 0;
-                GenerateMap();
+                map[x][y] =1;
+                PrintMap();
                 break;
 
             default:
@@ -47,10 +50,16 @@ public class Map {
     }
 
     public void GenerateMap() {
+        map[9][9] = 2;
+        Collections.shuffle(Arrays.asList(map));
+        map[x][y] =1;
+        map[a][b] =6;
 
+            //System.out.println(Arrays.deepToString(map));
+        }
+
+    public void PrintMap(){
         for (int[] row : map) {
-            map[x][y] =1;
-            map[a][b] =6;
             if (map[x][y] == map[a][b]){
                 System.out.println("WIN");
                 System.exit(0);
@@ -62,8 +71,7 @@ public class Map {
             System.out.println(sj.toString());
 
 
-            //System.out.println(Arrays.deepToString(map));
-
         }
     }
 }
+

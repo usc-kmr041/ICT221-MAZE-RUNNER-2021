@@ -34,7 +34,7 @@ public class GameEngine {
         boolean win = true;
             Map Map = new Map();
             Map.GenerateMap();
-
+            Map.PrintMap();
             do{
                 Map.move();
 
