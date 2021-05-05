@@ -1,5 +1,8 @@
 package mazerunner.engine;
-import java.util.*;
+
+import java.util.Random;
+import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class Map {
     Random rand = new Random();
@@ -49,9 +52,27 @@ public class Map {
         }
     }
 
+    public static void shuffle(int[][] matrix, int columns, Random rnd) {
+        int size = matrix.length * columns;
+        for (int i = size; i > 1; i--) {
+            swap(matrix, columns, i - 1, rnd.nextInt(i));
+        }
+    }
+
+    public static void swap(int[][] matrix, int columns, int i, int j) {
+        int tmp = matrix[i / columns][i % columns];
+        matrix[i / columns][i % columns] = matrix[j / columns][j % columns];
+        matrix[j / columns][j % columns] = tmp;
+
+    }
+
     public void GenerateMap() {
-        map[9][9] = 2;
-        Collections.shuffle(Arrays.asList(map));
+        map[8][9] = 2;
+        map[7][9] = 2;
+        map[5][9] = 2;
+        map[6][9] = 2;
+        map[3][9] = 2;
+        shuffle(map,10,new Random());
         map[x][y] =1;
         map[a][b] =6;
 
