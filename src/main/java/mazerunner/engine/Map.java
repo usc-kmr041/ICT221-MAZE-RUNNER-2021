@@ -21,6 +21,7 @@ public class Map {
 
         switch(move){
             case 'u':
+                Events.CheckEvent(map[x-1][y]);
                 x=x-1;
                 map[x+1][y] = 0;
                 map[x][y] =1;
@@ -28,18 +29,21 @@ public class Map {
                 break;
 
             case 'd':
+                Events.CheckEvent(map[x+1][y]);
                 x=x+1;
                 map[x-1][y] = 0;
                 map[x][y] =1;
                 PrintMap();
                 break;
             case 'l':
+                Events.CheckEvent(map[x][y-1]);
                 y=y-1;
                 map[x][y+1] = 0;
                 map[x][y] =1;
                 PrintMap();
                 break;
             case 'r':
+                Events.CheckEvent(map[x][y+1]);
                 y=y+1;
                 map[x][y-1] = 0;
                 map[x][y] =1;
@@ -70,10 +74,9 @@ public class Map {
         GenerateElements(5,2);
         GenerateElements(5,3);
         GenerateElements(5,4);
-        GenerateElements(5,5);
         shuffle(map,10,new Random());
         map[x][y] =1;
-        map[a][b] =6;
+        map[a][b] =5;
 
             //System.out.println(Arrays.deepToString(map));
         }
