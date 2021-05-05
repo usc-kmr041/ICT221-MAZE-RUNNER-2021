@@ -5,14 +5,18 @@ public class Events {
     public static void CheckEvent(int value1){
 
         if(value1 == 2){
-            System.out.println("coin");
+            Map.coin = Map.coin +1;
         }
         if(value1 == 3){
-            System.out.println("apples");
+            Map.stamina =Map.stamina+4;
         }
         if(value1 == 4){
             System.out.println("trap");
         }
+        if(Map.stamina == 1){
+            System.out.println("ran out of stamina");
+            System.exit(0);
+        }
+        }
     }
 
-}
