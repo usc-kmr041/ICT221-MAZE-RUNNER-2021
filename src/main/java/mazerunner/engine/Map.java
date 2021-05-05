@@ -67,11 +67,10 @@ public class Map {
     }
 
     public void GenerateMap() {
-        map[8][9] = 2;
-        map[7][9] = 2;
-        map[5][9] = 2;
-        map[6][9] = 2;
-        map[3][9] = 2;
+        GenerateElements(5,2);
+        GenerateElements(5,3);
+        GenerateElements(5,4);
+        GenerateElements(5,5);
         shuffle(map,10,new Random());
         map[x][y] =1;
         map[a][b] =6;
@@ -93,6 +92,13 @@ public class Map {
 
 
         }
+    }
+    public void GenerateElements(int quantity,int type){
+
+        for (int i = 0; i < quantity; i++){
+            map[type][i] = type;
+        }
+
     }
 }
 
