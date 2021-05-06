@@ -31,6 +31,12 @@ public class Map {
                 break;
 
             case 'd':
+                if (x==9){
+                    map[x][y] =1;
+                    System.out.println("There is a wall blocking your path.");
+                    move();
+                    break;
+                }
                 Events.CheckEvent(map[x+1][y]);
                 x=x+1;
                 map[x-1][y] = 0;
@@ -39,6 +45,12 @@ public class Map {
                 PrintMap();
                 break;
             case 'l':
+                if (y==0) {
+                    map[x][y] = 1;
+                    System.out.println("There is a wall blocking your path.");
+                    move();
+                    break;
+                }
                 Events.CheckEvent(map[x][y-1]);
                 y=y-1;
                 map[x][y+1] = 0;
@@ -47,6 +59,12 @@ public class Map {
                 PrintMap();
                 break;
             case 'r':
+                if (y==9){
+                    map[x][y] =1;
+                    System.out.println("There is a wall blocking your path.");
+                    move();
+                    break;
+                }
                 Events.CheckEvent(map[x][y+1]);
                 y=y+1;
                 map[x][y-1] = 0;
