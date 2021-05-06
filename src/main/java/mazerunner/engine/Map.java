@@ -88,9 +88,10 @@ public class Map {
         }
 
     public void PrintMap(){
+        System.out.println("You take a look at your map:");
         for (int[] row : map) {
             if (map[x][y] == map[a][b]) {
-                System.out.println("WIN");
+                System.out.println("\"OH! You have reached your destination! You finished with a score of "+Map.coin+".");
                 System.exit(0);
             }
             StringJoiner sj = new StringJoiner("|");
