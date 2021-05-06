@@ -22,6 +22,12 @@ public class Map {
 
         switch(move){
             case 'u':
+                if (x==0){
+                    map[x][y] =1;
+                    System.out.println("There is a wall blocking your path.");
+                    move();
+                    break;
+                }
                 Events.CheckEvent(map[x-1][y]);
                 x=x-1;
                 map[x+1][y] = 0;
