@@ -100,13 +100,15 @@ public class Map {
     }
 
     public void GenerateMap() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Set difficulty 0-10:");
+        int response = input.nextInt();
         GenerateElements(5,2);
-        GenerateElements(5,3);
-        GenerateElements(5,4);
+        GenerateElements(12 - response,3);
+        GenerateElements(response,4);
         shuffle(map,10,new Random());
         map[x][y] =1;
         map[a][b] =5;
-        System.out.println(stamina);
 
             //System.out.println(Arrays.deepToString(map));
         }
