@@ -11,7 +11,7 @@ public class Map {
     int[][] map = new int[10][10];
     int x = 9;
     int y = 0;
-    public static int stamina = 12;
+    public static int stamina = 99;
     public static int coin = 10;
     public static int trigger = 0;
 
@@ -72,10 +72,33 @@ public class Map {
                     break;
                 }
                 Events.CheckEvent(map[x+1][y]);
+
+                if (trigger == 2){
+                    trigger = 3;
+                }
+
+                if (trigger == 0){
+                    map[x+1][y] = 1;
+                    map[x][y] =0;
+                }
+
+
+                if (trigger == 1){
+                    map[x+1][y]=9;
+                    map[x][y] =0;
+                    trigger = 2;
+                }
+
+                if (trigger == 3){
+                    map[x][y] = 4;
+                    map[x+1][y]=1;
+                    trigger = 0;
+                }
+
                 x=x+1;
-                map[x-1][y] = 0;
-                map[x][y] =1;
-                stamina --;
+            //    map[x-1][y] = 0;
+            //    map[x][y] =1;
+            //    stamina --;
                 PrintMap();
                 break;
             case 'l':
@@ -86,9 +109,33 @@ public class Map {
                     break;
                 }
                 Events.CheckEvent(map[x][y-1]);
+
+                if (trigger == 2){
+                    trigger = 3;
+                }
+
+                if (trigger == 0){
+                    map[x][y-1] = 1;
+                    map[x][y] =0;
+                }
+
+
+                if (trigger == 1){
+                    map[x][y-1]=9;
+                    map[x][y] =0;
+                    trigger = 2;
+                }
+
+                if (trigger == 3){
+                    map[x][y] = 4;
+                    map[x][y-1]=1;
+                    trigger = 0;
+                }
+
+
                 y=y-1;
-                map[x][y+1] = 0;
-                map[x][y] =1;
+                //map[x][y+1] = 0;
+                //map[x][y] =1;
                 stamina --;
                 PrintMap();
                 break;
@@ -100,9 +147,33 @@ public class Map {
                     break;
                 }
                 Events.CheckEvent(map[x][y+1]);
+
+                if (trigger == 2){
+                    trigger = 3;
+                }
+
+                if (trigger == 0){
+                    map[x][y+1] = 1;
+                    map[x][y] =0;
+                }
+
+
+                if (trigger == 1){
+                    map[x][y+1]=9;
+                    map[x][y] =0;
+                    trigger = 2;
+                }
+
+                if (trigger == 3){
+                    map[x][y] = 4;
+                    map[x][y+1]=1;
+                    trigger = 0;
+                }
+
+
                 y=y+1;
-                map[x][y-1] = 0;
-                map[x][y] =1;
+                //map[x][y-1] = 0;
+                //map[x][y] =1;
                 stamina --;
                 PrintMap();
                 break;
