@@ -12,10 +12,11 @@ public class Map {
     int x = 9;
     int y = 0;
     public static int stamina = 12;
-    public static int coin = 0;
-
+    public static int coin = 10;
+    public static int trigger = 0;
 
     public void move() {
+        // Controls the toon.//
         Scanner input = new Scanner(System.in);
         if (map[x][y] == map[a][b]) {
             System.out.println("\"OH! You have reached your destination! You finished with a score of "+Map.coin+".");
@@ -32,12 +33,35 @@ public class Map {
                     move();
                     break;
                 }
+
                 Events.CheckEvent(map[x-1][y]);
+
+                if (trigger == 2){
+                    trigger = 3;
+                }
+
+                if (trigger == 0){
+                    map[x-1][y] = 1;
+                    map[x][y] =0;
+                }
+
+
+                if (trigger == 1){
+                    map[x-1][y]=9;
+                    map[x][y] =0;
+                    trigger = 2;
+                }
+
+                if (trigger == 3){
+                    map[x][y] = 4;
+                    map[x-1][y]=1;
+                    trigger = 0;
+                }
+
                 x=x-1;
-                map[x+1][y] = 0;
-                map[x][y] =1;
                 stamina --;
                 PrintMap();
+
                 break;
 
             case 'd':
@@ -89,21 +113,22 @@ public class Map {
         }
     }
 
-    public static void shuffle(int[][] matrix, int columns, Random rnd) {
-        int size = matrix.length * columns;
+    public static void shuffle(int[][] completemap, int columns, Random rnd) {
+        int size = completemap.length * columns;
         for (int i = size; i > 1; i--) {
-            swap(matrix, columns, i - 1, rnd.nextInt(i));
+            swap(completemap, columns, i - 1, rnd.nextInt(i));
         }
     }
 
-    public static void swap(int[][] matrix, int columns, int i, int j) {
-        int tmp = matrix[i / columns][i % columns];
-        matrix[i / columns][i % columns] = matrix[j / columns][j % columns];
-        matrix[j / columns][j % columns] = tmp;
+    public static void swap(int[][] completemap, int columns, int i, int j) {
+        int tmp = completemap[i / columns][i % columns];
+        completemap[i / columns][i % columns] = completemap[j / columns][j % columns];
+        completemap[j / columns][j % columns] = tmp;
 
     }
 
     public void GenerateMap() {
+        // Map is generated to meet criteria for assessment. Changed the behaviour of the exit so that it only spawns on the top 3 columns of the grid.//
         Scanner input = new Scanner(System.in);
         System.out.println("Set difficulty 0-10:");
         int response = input.nextInt();

@@ -16,6 +16,7 @@ public class Events extends Map {
             System.out.println("You stepped on a trap.");
             Map.coin = Map.coin - 1;
             if (Map.coin > -1) {
+                trigger = 1;
                 System.out.println("You sacrificed a coin to the gods to get out.");
             }
 
