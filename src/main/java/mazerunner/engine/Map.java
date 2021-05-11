@@ -17,6 +17,10 @@ public class Map {
 
     public void move() {
         Scanner input = new Scanner(System.in);
+        if (map[x][y] == map[a][b]) {
+            System.out.println("\"OH! You have reached your destination! You finished with a score of "+Map.coin+".");
+            System.exit(0);
+        }
         System.out.println("Where do you want to go?");
         char move = input.next().charAt(0);
 
@@ -104,7 +108,7 @@ public class Map {
         System.out.println("Set difficulty 0-10:");
         int response = input.nextInt();
         GenerateElements(5,2);
-        GenerateElements(12 - response,3);
+        GenerateElements(10 - response,3);
         GenerateElements(response,4);
         shuffle(map,10,new Random());
         map[x][y] =1;
@@ -116,10 +120,6 @@ public class Map {
     public void PrintMap(){
         System.out.println("You take a look at your map:");
         for (int[] row : map) {
-            if (map[x][y] == map[a][b]) {
-                System.out.println("\"OH! You have reached your destination! You finished with a score of "+Map.coin+".");
-                System.exit(0);
-            }
             StringJoiner sj = new StringJoiner("|");
             for (int col : row) {
                 sj.add(String.format("%02d", col));
