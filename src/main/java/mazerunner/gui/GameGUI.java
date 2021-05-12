@@ -23,7 +23,7 @@ public class GameGUI extends Application {
         //Button root = new Button("Amazing Miner Game coming soon...");
         //root.setFont(new Font(24));
 
-        primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.setTitle("Maze Runner Game");
         primaryStage.show();
     }
