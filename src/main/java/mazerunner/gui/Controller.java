@@ -1,15 +1,20 @@
 package mazerunner.gui;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import mazerunner.engine.GameEngine;
 
 import java.awt.event.MouseEvent;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class Controller {
+public class Controller implements Initializable {
 
     public void moveup(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("up");
@@ -24,8 +29,18 @@ public class Controller {
         System.out.println("right");
     }
 
+    @FXML private Label Stamina;
+    @FXML private Label Coins;
 
 
+    public void startgame(javafx.scene.input.MouseEvent mouseEvent){
+
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 
 
     public class GameGUI extends Application {
