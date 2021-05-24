@@ -53,7 +53,7 @@
       <Label layoutX="14.0" layoutY="277.0" text="Stamina :" />
       <Label layoutX="13.0" layoutY="191.0" text="Difficulty: " />
       <Label layoutX="33.0" layoutY="14.0" text="Maze Runner" />
-      <Button layoutX="43.0" layoutY="38.0" mnemonicParsing="false" text="START" />
+      <Button layoutX="43.0" layoutY="38.0" mnemonicParsing="false" onMouseClicked="#start" text="START" />
       <Label layoutX="73.0" layoutY="260.0" text="Label" />
       <Label layoutX="73.0" layoutY="277.0" text="Label" />
       <Button layoutX="46.0" layoutY="222.0" mnemonicParsing="false" text="Set" />

@@ -9,12 +9,35 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import mazerunner.engine.GameEngine;
+import mazerunner.engine.Map;
 
 import java.awt.event.MouseEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class Controller implements Initializable {
+
+    public void start(javafx.scene.input.MouseEvent mouseEvent){
+        Scanner input = new Scanner(System.in);
+        boolean win = true;
+        Map Map = new Map();
+
+        Map.GenerateMap();
+        Map.PrintMap();
+
+        do{
+            char move = input.next().charAt(0);
+            Map.move(move);
+            Map.PrintMap();
+
+        } while (win);
+
+        System.out.println("win");
+
+    }
+
+
 
     public void moveup(javafx.scene.input.MouseEvent mouseEvent) {
         System.out.println("up");
@@ -32,10 +55,6 @@ public class Controller implements Initializable {
     @FXML private Label Stamina;
     @FXML private Label Coins;
 
-
-    public void startgame(javafx.scene.input.MouseEvent mouseEvent){
-
-    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

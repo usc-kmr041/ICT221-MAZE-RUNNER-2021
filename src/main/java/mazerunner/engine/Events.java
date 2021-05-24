@@ -20,6 +20,10 @@ public class Events extends Map {
                 System.out.println("You sacrificed a coin to the gods to get out.");
             }
 
+        if (value1 == 5) {
+            System.out.println("\"OH! You have reached your destination! You finished with a score of " + Map.coin + ".");
+            System.exit(0);
+        }
 
         }
         if (Map.stamina == 1) {

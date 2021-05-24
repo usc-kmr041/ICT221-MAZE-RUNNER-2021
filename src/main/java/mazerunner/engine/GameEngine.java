@@ -1,5 +1,7 @@
 package mazerunner.engine;
 
+import java.util.Scanner;
+
 public class GameEngine {
 
     /**
@@ -31,12 +33,18 @@ public class GameEngine {
      * Plays a text-based game
      */
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         boolean win = true;
             Map Map = new Map();
+
             Map.GenerateMap();
             Map.PrintMap();
+
             do{
-                Map.move();
+
+                char move = input.next().charAt(0);
+                Map.move(move);
+                Map.PrintMap();
 
             } while (win);
 
