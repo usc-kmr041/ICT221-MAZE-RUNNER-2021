@@ -22,19 +22,11 @@ public class Controller implements Initializable {
         Scanner input = new Scanner(System.in);
         boolean win = true;
         Map Map = new Map();
-
         Map.GenerateMap(4);
+        //somehow get value from GUI to add as response to set difficulty.//
         Map.PrintMap();
-
-        do{
-            char move = input.next().charAt(0);
-            Map.move(move);
-            Map.PrintMap();
-
-        } while (win);
-
-        System.out.println("win");
-
+        //Get PrintMap() to print elements in the 10x10 grid in the GUI.//
+        //set win conditions and move commands//
     }
 
 
