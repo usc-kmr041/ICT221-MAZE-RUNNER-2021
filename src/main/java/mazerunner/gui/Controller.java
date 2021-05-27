@@ -1,11 +1,14 @@
 package mazerunner.gui;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import mazerunner.engine.GameEngine;
@@ -18,9 +21,9 @@ import java.util.Scanner;
 
 public class Controller implements Initializable {
 
+
+
     public void start(javafx.scene.input.MouseEvent mouseEvent){
-        Scanner input = new Scanner(System.in);
-        boolean win = true;
         Map Map = new Map();
         Map.GenerateMap(4);
         //somehow get value from GUI to add as response to set difficulty.//
@@ -46,10 +49,13 @@ public class Controller implements Initializable {
 
     @FXML private Label Stamina;
     @FXML private Label Coins;
-
+    @FXML private ChoiceBox<Integer> Mydifficulty;
+    private Integer[] difficultylist = {1,2,3,4,5,6,7,8,9,10};
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        Mydifficulty.getItems().addAll(difficultylist);
 
     }
 
@@ -61,14 +67,15 @@ public class Controller implements Initializable {
 
         @Override
         public void start(Stage primaryStage) throws Exception {
+
             Parent root = FXMLLoader.load(getClass().getResource("game_gui.fxml"));
             //Button root = new Button("Amazing Miner Game coming soon...");
             //root.setFont(new Font(24));
-
             primaryStage.setScene(new Scene(root, 600, 400));
             primaryStage.setTitle("Maze Runner Game");
             primaryStage.setResizable(false);
             primaryStage.show();
+
         }
     }
 }
