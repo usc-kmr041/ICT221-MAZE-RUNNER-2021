@@ -7,7 +7,7 @@ public class GameEngineTest {
     @Test
     public void testGenerateMap(){
         Map Map = new Map();
-        Map.GenerateMap();
+        Map.GenerateMap(4);
     }
     @Test
     public void testMove(){

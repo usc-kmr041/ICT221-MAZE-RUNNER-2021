@@ -36,8 +36,9 @@ public class GameEngine {
         Scanner input = new Scanner(System.in);
         boolean win = true;
             Map Map = new Map();
-
-            Map.GenerateMap();
+            System.out.println("Set difficulty 0-10:");
+            int difficulty = input.nextInt();
+            Map.GenerateMap(difficulty);
             Map.PrintMap();
 
             do{

@@ -201,11 +201,8 @@ public class Map {
 
     }
 
-    public void GenerateMap() {
+    public void GenerateMap(int response) {
         // Map is generated to meet criteria for assessment. Changed the behaviour of the exit so that it only spawns on the top 3 columns of the grid.//
-        Scanner input = new Scanner(System.in);
-        System.out.println("Set difficulty 0-10:");
-        int response = input.nextInt();
         GenerateElements(5, 2);
         GenerateElements(10 - response, 3);
         GenerateElements(response, 4);

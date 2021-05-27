@@ -23,7 +23,7 @@ public class Controller implements Initializable {
         boolean win = true;
         Map Map = new Map();
 
-        Map.GenerateMap();
+        Map.GenerateMap(4);
         Map.PrintMap();
 
         do{
