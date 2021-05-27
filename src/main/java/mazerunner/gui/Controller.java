@@ -3,11 +3,13 @@ package mazerunner.gui;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -20,11 +22,10 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class Controller implements Initializable {
-
+    Map Map = new Map();
 
 
     public void start(javafx.scene.input.MouseEvent mouseEvent){
-        Map Map = new Map();
         Map.GenerateMap(4);
         //somehow get value from GUI to add as response to set difficulty.//
         Map.PrintMap();
@@ -35,20 +36,25 @@ public class Controller implements Initializable {
 
 
     public void moveup(javafx.scene.input.MouseEvent mouseEvent) {
-        System.out.println("up");
+        Map.move('u');
+        Map.PrintMap();
     }
     public void movedown(javafx.scene.input.MouseEvent mouseEvent) {
-        System.out.println("down");
+        Map.move('d');
+        Map.PrintMap();;
     }
     public void moveleft(javafx.scene.input.MouseEvent mouseEvent) {
-        System.out.println("left");
+        Map.move('l');
+        Map.PrintMap();;
     }
     public void moveright(javafx.scene.input.MouseEvent mouseEvent) {
-        System.out.println("right");
+        Map.move('r');
+        Map.PrintMap();;
     }
 
     @FXML private Label Stamina;
     @FXML private Label Coins;
+    @FXML private Button Set;
     @FXML private ChoiceBox<Integer> Mydifficulty;
     private Integer[] difficultylist = {1,2,3,4,5,6,7,8,9,10};
 
@@ -56,9 +62,9 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         Mydifficulty.getItems().addAll(difficultylist);
+        Mydifficulty.setValue(5);
 
     }
-
 
     public class GameGUI extends Application {
         // TODO: move this to Controller class if you use FXML...
