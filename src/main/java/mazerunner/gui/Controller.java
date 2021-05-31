@@ -34,6 +34,8 @@ public class Controller implements Initializable {
         Map.PrintMap();
         //Get PrintMap() to print elements in the 10x10 grid in the GUI.//
         //set win conditions and move commands//
+        //Iterate through Map and represent values in Grid//
+        //disable control buttons before starting game//
     }
 
 
