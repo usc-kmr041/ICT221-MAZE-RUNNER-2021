@@ -12,6 +12,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import mazerunner.engine.GameEngine;
 import mazerunner.engine.Map;
@@ -55,6 +58,11 @@ public class Controller implements Initializable {
     @FXML private Label Stamina;
     @FXML private Label Coins;
     @FXML private Button Set;
+
+    @FXML private GridPane grid;
+    //Image playerimage = new Image("mazerunner/gui/player.JPG");
+    @FXML private ImageView playerimage;
+    @FXML private Label playerlabel = new Label("Player");
     @FXML private ChoiceBox<Integer> Mydifficulty;
     private Integer[] difficultylist = {1,2,3,4,5,6,7,8,9,10};
 
@@ -63,6 +71,11 @@ public class Controller implements Initializable {
 
         Mydifficulty.getItems().addAll(difficultylist);
         Mydifficulty.setValue(5);
+        //grid.getChildren().add(new ImageView(playerimage));
+        grid.add(playerlabel,Map.y,Map.x);
+        Stamina.setText(String.valueOf(Map.stamina));
+        Coins.setText(String.valueOf(Map.coin));
+
 
     }
 

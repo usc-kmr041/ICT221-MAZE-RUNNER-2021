@@ -9,8 +9,8 @@ public class Map {
     int a = rand.nextInt(2);
     int b = rand.nextInt(9);
     int[][] map = new int[10][10];
-    int x = 9;
-    int y = 0;
+    public static int x = 9;
+    public static int y = 0;
     public static int stamina = 99;
     public static int coin = 10;
     public static int trigger = 0;
