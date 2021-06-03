@@ -40,6 +40,8 @@ public class GameEngine {
             int difficulty = input.nextInt();
             Map.GenerateMap(difficulty);
             Map.PrintMap();
+            System.out.println("Where do you want to go?");
+            System.out.println("up = u, down = d, left = l, right = r");
 
             do{
 

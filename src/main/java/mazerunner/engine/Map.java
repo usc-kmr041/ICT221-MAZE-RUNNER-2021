@@ -17,7 +17,8 @@ public class Map {
     Scanner input = new Scanner(System.in);
 
     public void move(char direction) {
-        // Controls the toon.//
+        // Controls the toon.
+        // up = u, down = d, left = l, right = r
 
         switch (direction) {
             case 'u':
