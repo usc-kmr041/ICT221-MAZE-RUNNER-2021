@@ -94,6 +94,7 @@ public class Map {
                 }
 
                 x = x + 1;
+                stamina--;
                 if (map[x][y] == map[a][b]) {
                     System.out.println("\"OH! You have reached your destination! You finished with a score of " + Map.coin + ".");
                     System.exit(0);
