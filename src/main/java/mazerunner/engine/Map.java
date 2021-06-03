@@ -8,11 +8,11 @@ public class Map {
     Random rand = new Random();
     int a = rand.nextInt(2);
     int b = rand.nextInt(9);
-    int[][] map = new int[10][10];
+    public int[][] map = new int[10][10];
     public static int x = 9;
     public static int y = 0;
-    public static int stamina = 99;
-    public static int coin = 10;
+    public static int stamina = 12;
+    public static int coin = 0;
     public static int trigger = 0;
     Scanner input = new Scanner(System.in);
 

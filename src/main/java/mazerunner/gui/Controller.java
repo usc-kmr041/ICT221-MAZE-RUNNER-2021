@@ -27,9 +27,15 @@ import java.util.Scanner;
 public class Controller implements Initializable {
     Map Map = new Map();
 
+    //private void scanmap(){
+      //  for (int row = 0; row < Map.map.length; row++){
+        //    for (int col = 0; col < Map.map[row].length; col++){
+          //      Map.map[row][col] = row * col;
+            //    System.out.print(String.valueOf(Map.map) + "\t");
+            //}}}
 
     public void start(javafx.scene.input.MouseEvent mouseEvent){
-        Map.GenerateMap(4);
+        Map.GenerateMap(5);
         //somehow get value from GUI to add as response to set difficulty.//
         Map.PrintMap();
         //Get PrintMap() to print elements in the 10x10 grid in the GUI.//
@@ -57,6 +63,7 @@ public class Controller implements Initializable {
         Map.PrintMap();;
     }
 
+
     @FXML private Label Stamina;
     @FXML private Label Coins;
     @FXML private Button Set;
@@ -77,8 +84,7 @@ public class Controller implements Initializable {
         grid.add(playerlabel,Map.y,Map.x);
         Stamina.setText(String.valueOf(Map.stamina));
         Coins.setText(String.valueOf(Map.coin));
-
-
+        //scanmap();
     }
 
     public class GameGUI extends Application {
