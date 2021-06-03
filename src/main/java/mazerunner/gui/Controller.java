@@ -35,7 +35,7 @@ public class Controller implements Initializable {
             //}}}
 
     public void start(javafx.scene.input.MouseEvent mouseEvent){
-        Map.GenerateMap(5);
+        Map.GenerateMap(Mydifficulty.getValue());
         //somehow get value from GUI to add as response to set difficulty.//
         Map.PrintMap();
         //Get PrintMap() to print elements in the 10x10 grid in the GUI.//
@@ -49,18 +49,26 @@ public class Controller implements Initializable {
     public void moveup(javafx.scene.input.MouseEvent mouseEvent) {
         Map.move('u');
         Map.PrintMap();
+        Stamina.setText(String.valueOf(Map.stamina));
+        Coins.setText(String.valueOf(Map.coin));
     }
     public void movedown(javafx.scene.input.MouseEvent mouseEvent) {
         Map.move('d');
         Map.PrintMap();;
+        Stamina.setText(String.valueOf(Map.stamina));
+        Coins.setText(String.valueOf(Map.coin));
     }
     public void moveleft(javafx.scene.input.MouseEvent mouseEvent) {
         Map.move('l');
         Map.PrintMap();;
+        Stamina.setText(String.valueOf(Map.stamina));
+        Coins.setText(String.valueOf(Map.coin));
     }
     public void moveright(javafx.scene.input.MouseEvent mouseEvent) {
         Map.move('r');
         Map.PrintMap();;
+        Stamina.setText(String.valueOf(Map.stamina));
+        Coins.setText(String.valueOf(Map.coin));
     }
 
 
